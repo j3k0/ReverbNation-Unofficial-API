@@ -5,14 +5,10 @@ function rnInitLabel(labelID) {
     gReverbNation['pageType'] = 'label';
     gReverbNation['labelID'] = labelID;
 }
+
 function rnInitArtist(artistID) {
     gReverbNation['pageType'] = 'artist';
     gReverbNation['artistID'] = artistID;
-}
-
-function rnIsLoggedIn() {
-    if (typeof(gReverbNation['loggedin']) == 'undefined') return false;
-    return (gReverbNation['loggedin']);
 }
 
 function rnLogin(user, password) {
