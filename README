@@ -1,0 +1,46 @@
+Unofficial API for ReverbNation.
+---
+(c) 2010 by Jeko <jeko@fovea.cc>
+---
+
+This project aims to provide a minimal set of methods to update a ReverbNation account from a remote website.
+
+-----
+USAGE
+-----
+
+It's a javascript driven API. Here are the basic commands available for now:
+
+// Set Your ReverbNation User/Password (This call do not send the login request)
+rnLogin(user, password);
+
+// Set the Label ID. All subsequent actions  will act on this Label.
+rnInitLabel(label_id);
+
+// Change the status of active label or artist.
+rnStatus(status_message);
+
+// Set the Artist ID. All subsequent actions will act on this Artist.
+rnInitArtist(artist_id);
+
+// Add a show to active Artist. (datetime, venue_name, 
+rnAddShow(datetime, venue_name, venue_city, venue_country);
+>> example: rnAddShow('2010-10-04 20:30', 'Sky Bar', 'Beirut', 'LB');
+
+
+See example.html for a full example.
+
+------
+INSIDE
+------
+
+reverbnation.js contains the javascript code, it depends on jQuery. Javascript makes asynchronous request to reverbnation.php to tell it which actions to perform.
+
+reverbnation.php is a proxy, it gets orders from the Javascript Ajax call, and send them to ReverbNation in the appropriate format.
+
+-------
+CONTACT
+-------
+
+Want to help? Contact me at <jeko@fovea.cc>
+
